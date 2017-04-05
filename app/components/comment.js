@@ -1,7 +1,8 @@
 import React from 'react';
 import {unixTimeToString} from '../util';
 import {Link} from 'react-router';
-import {likeCommentItem, unlikeCommentItem} from '../server'
+import {likeComment} from '../server'
+import {unlikeComment} from '../server'
 
 export default class Comment extends React.Component {
   constructor(props) {
@@ -31,10 +32,10 @@ if (clickEvent.button === 0) {
 
   if (this.didUserLike()) {
     // User clicked 'unlike' button.
-    unlikeCommentItem(this.state.cid, this.state.index, 4, callbackFunction);
+    unlikeComment(this.state.cid, this.state.index, 4, callbackFunction);
   } else {
     // User clicked 'like' button.
-    likeCommentItem(this.state.cid, this.state.index, 4, callbackFunction);
+    likeComment(this.state.cid, this.state.index, 4, callbackFunction);
   }
 }
 }

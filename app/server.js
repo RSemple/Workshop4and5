@@ -155,7 +155,7 @@ export function unlikeFeedItem(feedItemId, userId, cb) {
  * Updates a comment's likeCounter by adding the user to the likeCounter.
  * Provides an updated likeCounter in the response.
  */
-export function likeCommentItem(feedItemId, commentIndex, userId, cb) {
+export function likeComment(feedItemId, commentIndex, userId, cb) {
   var feedItem = readDocument('feedItems', feedItemId);
   // Normally, we would check if the user already liked this comment.
   // But we will not do that in this mock server.
@@ -170,7 +170,7 @@ export function likeCommentItem(feedItemId, commentIndex, userId, cb) {
  * Updates a comment's likeCounter by removing the user from the likeCounter.
  * Provides an updated likeCounter in the response.
  */
-export function unlikeCommentItem(feedItemId, commentIndex, userId, cb) {
+export function unlikeComment(feedItemId, commentIndex, userId, cb) {
   var feedItem = readDocument('feedItems', feedItemId);
   // Find the array index that contains the user's ID.
   // (We didn't *resolve* the FeedItem object, so it is just an array of user IDs)
